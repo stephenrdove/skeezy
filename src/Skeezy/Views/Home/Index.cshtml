@@ -1,0 +1,12 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>It ain't easy bean' Skeezy</h1>
+@if (Model != null)
+{
+    <h2> @Model.Name </h2>
+}
+
+<partial name="../Partials/MessageBoard" model="Model" />
