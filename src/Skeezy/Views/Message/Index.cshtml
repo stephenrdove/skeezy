@@ -1,0 +1,21 @@
+@model IList<Message>
+
+<div class="messages">
+  <h1>Messages</h1>
+
+  <form asp-controller="Message" asp-action="Submit" method="POST">
+      <input name="text" placeholder="Enter your message..." />
+      <button type="submit">Submit</button>
+  </form>
+
+  <ul>
+    @foreach (Message message in Model)
+    {
+      <li>
+        <strong>@(message.User?.Name ?? "User not found")</strong>
+        <p>@message.Text</p>
+      </li>
+    }
+  </ul>
+  
+</div>
